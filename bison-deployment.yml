@@ -6,15 +6,15 @@ spec:
   replicas: 1  # Number of instances (pods) to run
   selector:
     matchLabels:
-      app: bison
+      app: bison-dep
 # everything under template is the definition of the pod that will be created.      
   template:
     metadata:
       labels:
-        app: bison
+        app: bison-app
     spec:
       containers:
-      - name: web-app
+      - name: bison-con
         image: waldbaan/bison:latest
         ports:
         - containerPort: 80
