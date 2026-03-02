@@ -1,4 +1,4 @@
-apiversion: V1
+apiVersion: V1
 kind: Service
 metadata:
   name: lb-service
