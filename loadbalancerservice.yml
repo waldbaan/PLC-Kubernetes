@@ -1,0 +1,13 @@
+kind: Service
+metadata:
+    name: lb-service
+    labels:
+      app: my-container
+spec:
+  selector:
+    app: my-container
+  type: LoadBalancer
+  ports:
+  - nodePort: 31009
+    port: 80
+    targetPort: 80

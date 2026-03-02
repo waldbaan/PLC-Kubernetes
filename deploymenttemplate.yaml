@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myfirst-deployment
+spec:
+  replicas: 2  # Number of instances (pods) to run
+  selector:
+    matchLabels:
+      app: my-container
+# everything under template is the definition of the pod that will be created.      
+  template:
+    metadata:
+      labels:
+        app: my-container
+    spec:
+      containers:
+      - name: web-app
+        image: waldbaan/website:latest
+        ports:
+        - containerPort: 80

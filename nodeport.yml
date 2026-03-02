@@ -1,0 +1,14 @@
+# nginx-nodeport-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: myfirstdeployment-nodeport-service
+spec:
+  selector:
+    app: my-container
+  ports:
+    - protocol: TCP
+      port: 80          # Port on the service
+      targetPort: 80     # Port on the pod
+      nodePort: 30007    # External port on the Node (choose a port between 30000 and 32767)
+  type: NodePort

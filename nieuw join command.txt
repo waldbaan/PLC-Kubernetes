@@ -1,0 +1,6 @@
+
+
+
+# join command
+kubeadm join 10.164.0.5:6443 --token rlvicx.m7joyzsunsyk9edu \
+        --discovery-token-ca-cert-hash sha256:5953bf7025aebb7a53ee1537060a080f8522824d895db91eca44ef5d320d475a
