@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: brightspace-deployment
+spec:
+  replicas: 1  # Number of instances (pods) to run
+  selector:
+    matchLabels:
+      app: brightspace-app
+# everything under template is the definition of the pod that will be created.      
+  template:
+    metadata:
+      labels:
+        app: brightspace-app
+    spec:
+      containers:
+      - name: brightspace-con
+        image: waldbaan/brightspace:latest
+        ports:
+        - containerPort: 80
