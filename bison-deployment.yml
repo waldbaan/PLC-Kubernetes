@@ -6,7 +6,7 @@ spec:
   replicas: 1  # Number of instances (pods) to run
   selector:
     matchLabels:
-      app: bison-dep
+      app: bison-app
 # everything under template is the definition of the pod that will be created.      
   template:
     metadata:
