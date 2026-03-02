@@ -1,20 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myfirst-deployment
+  name: bison-deployment
 spec:
-  replicas: 2  # Number of instances (pods) to run
+  replicas: 1  # Number of instances (pods) to run
   selector:
     matchLabels:
-      app: my-container
+      app: bison
 # everything under template is the definition of the pod that will be created.      
   template:
     metadata:
       labels:
-        app: my-container
+        app: bison
     spec:
       containers:
       - name: web-app
         image: waldbaan/bison:latest
         ports:
         - containerPort: 80
+
+
