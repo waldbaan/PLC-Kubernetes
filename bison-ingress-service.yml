@@ -7,10 +7,17 @@ spec:
     - host: iets.nl
       http:
         paths:
-          - path: /
+          - path: /bison
             pathType: Prefix
             backend:
               service:
                 name: bis-lb-service
                 port:
                   number: 8080
+          - path: /brightspace
+            pathType: Prefix
+            backend:
+              service:
+                name: bse-lb-service
+                port:
+                  number: 8081
